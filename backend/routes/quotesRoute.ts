@@ -1,9 +1,8 @@
 // routes/quotesRoute.js
-const express = require('express');
-const quotesController = require('../controllers/quotesController');
+import { Router } from 'express';
+import quotesController from '../controllers/quotesController';
 
-const router = express.Router();
-
+const router = Router();
 
 /**
  * @swagger
@@ -16,4 +15,5 @@ const router = express.Router();
 router.get('/:id', quotesController.getById);
 
 
-module.exports = router;
+
+export default router;

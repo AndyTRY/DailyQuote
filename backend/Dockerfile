@@ -20,8 +20,8 @@ COPY . .
 EXPOSE 3000
 
 # FOR DEVELOPEMENT
-CMD ["nodemon", "app.js"]
+CMD ["nodemon", "app.ts"]
 
 # FOR LIVE
-# CMD ["node", "app.js"]
+# CMD ["node", "app.ts"]
  

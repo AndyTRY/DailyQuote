@@ -1,5 +1,5 @@
-const swaggerJsdoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 
 const swaggerOptions = {
   definition: {
@@ -10,9 +10,9 @@ const swaggerOptions = {
       description: 'API for daily quotes',
     },
   },
-  apis: ['./routes/*.js'], //files containing your route definitions
+  apis: ['./routes/*.ts'], // files containing your route definitions
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
-module.exports = { swaggerUi, swaggerSpec };
+export { swaggerUi, swaggerSpec };
