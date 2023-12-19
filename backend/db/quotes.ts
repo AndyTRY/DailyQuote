@@ -1,9 +1,9 @@
-import { QueryBuilder } from 'knex';
 import { Quotes as QuotesModel } from './db';
+import { Quote } from './schemas';
 
 const Quotes: {
   add: (quote: string, author: string) => Promise<number>;
-  getById: (quoteId: number) => Promise<Record<string, unknown> | undefined>;
+  getById: (quoteId: number) => Promise<Quote | undefined>;
   getTotalQuoteCount: () => Promise<number>;
 } = {
   async add(quote: string, author: string): Promise<number> {
@@ -11,8 +11,8 @@ const Quotes: {
     return quoteId;
   },
 
-  async getById(quoteId: number): Promise<Record<string, unknown> | undefined> {
-    return QuotesModel().where('id', quoteId).first();
+  async getById(quoteId: number): Promise<Quote | undefined> {
+    return await QuotesModel().where('id', quoteId).first();
   },
 
   async getTotalQuoteCount(): Promise<number> {

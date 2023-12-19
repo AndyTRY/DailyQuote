@@ -1,17 +1,18 @@
 import { Request, Response } from 'express';
 import  Quotes from '../db/quotes';
+import { tryGetThrowA } from '../utils/tryCatch'; 
 
 const getById = async (req: Request, res: Response) => {
   try {
     const quoteId = Number(req.params.id);
-    const quote = await Quotes.getById(quoteId);
-    if (!quote) {
-      return res.status(404).json({ error: 'Quote not found' });
-    }
-    return res.json(quote);
-  } catch (error) {
-    console.error('Error fetching quote:', error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    const quote = await tryGetThrowA(() => Quotes.getById(quoteId), "Internal Error", 500);
+    if (!quote) throw {status: 404, message: "Quote not found"}
+      
+    return res.json({ data: quote });
+
+  } catch (error: any) {
+    console.error(error.originalError || error.message);
+    return res.status(error.status).json({ error: error.message });
   }
 };
 
