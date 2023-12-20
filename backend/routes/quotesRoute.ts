@@ -1,6 +1,6 @@
 // routes/quotesRoute.js
 import { Router } from 'express';
-import quotesController from '../controllers/quotesController';
+import quotesController from '@controllers/quotesController';
 
 const router = Router();
 

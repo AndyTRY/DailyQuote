@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node -r tsconfig-paths/register -r ts-node/register ./app.ts",
+    "dev": "nodemon"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +16,8 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.6.5",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.0"
+    "swagger-ui-express": "^5.0.0",
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@types/knex": "^0.16.1",
