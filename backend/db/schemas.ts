@@ -3,3 +3,8 @@ export interface Quote {
     quote: string;
     author: string;
 }
+
+export interface QuoteOfTheDay {
+    date: Date;
+    quoteId: number;
+}

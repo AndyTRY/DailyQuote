@@ -16,6 +16,11 @@ const config: Record<string, Knex.Config> = {
     seeds: {
       directory: './seeds',
     },
+
+    // Pooled Connections Default (mySQL)
+    // Dynamically adjust based on load
+    // pool: {min: 2, max: 10,}
+
   },
 };
 
