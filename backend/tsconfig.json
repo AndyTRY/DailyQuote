@@ -9,7 +9,11 @@
 
       "baseUrl": "./",
       "paths": {
-        "@controllers/*": ["controllers/*"]
+        "@controllers/*": ["controllers/*"],
+        "@utils/*" : ["utils/*"],
+        "@routes/" : ["routes/*"],
+        "@db/*" : ["db/*"],
+        "@middlewares/*" : ["middlewares/*"]
       },
     }
   }
