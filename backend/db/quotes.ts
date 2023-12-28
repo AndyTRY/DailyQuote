@@ -1,4 +1,4 @@
-import { tryGetThrowA, tryThrowA } from 'utils/tryCatch';
+import { tryGetThrowA, tryThrowA } from '@utils/tryCatch';
 import { Quotes as QuotesModel, QuoteOfTheDay as QuoteOfTheDayModel } from './db';
 import { Quote, QuoteOfTheDay } from './schemas';
 
