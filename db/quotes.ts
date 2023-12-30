@@ -21,7 +21,8 @@ const Quotes: {
   },
 
   async getRandomQuote() : Promise<Quote | undefined> {
-    return await QuotesModel().select('id').orderByRaw('RANDOM()').limit(1).first();
+    // mysql Specific Syntax
+    return await QuotesModel().select('id').orderByRaw('RAND()').limit(1).first();
   },
 
 
